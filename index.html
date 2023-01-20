@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- <video id="vedio" controls autoplay loop>
+            <source src="star.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+        </video> -->
+        <div class="heading">
+            <p>calculate a weight of an object on a planet</p>
+        </div>
+        <div class="form">
+            <div id="form_top" class="form_top">
+                <input type="number" id="input" placeholder="Mass in Kilogram">
+                <select id="select">
+                    <option selected disabled value="">--Choose an planet--</option>
+                </select>
+                <button id="calculateMass">calculate weight</button>
+            </div>
+            <div id="big_box" class="big_box">
+                <div class="bigBox_backGroundColor">
+                    <div id="message" class="message"></div>
+                    <div id="error" class="error">
+                    </div>
+                </div>
+            </div>
+            <div id="form_bottom" class="form_bottom">
+                <div id="resultDiv" class="result">
+                    <div id="imageDiv" class="left">
+                        <img id="img" src="" alt="">
+                    </div>
+                    <div class="right">
+                        <p>The weight of the object on the <span id="PlanetName"></span></p>
+                        <h2 id="GravityValue"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const planets = [
+            { planetName: "Sun", gravity: 27.9, image: "img/Sun.png" },
+            { planetName: "Moon", gravity: 0.1655, image: "img/Moon.png" },
+            { planetName: "Mercury", gravity: 0.377, image: "img/Mercury.png" },
+            { planetName: "Venus", gravity: 0.9032, image: "img/Venus.png" },
+            { planetName: "Earth", gravity: 1, image: "img/Earth.png" },
+            { planetName: "Mars", gravity: 0.3895, image: "img/Mars.png" },
+            { planetName: "Jupiter", gravity: 2.640, image: "img/Jupiter.png" },
+            { planetName: "Saturn", gravity: 1.139, image: "img/Saturn.png" },
+            { planetName: "Uranus", gravity: 0.917, image: "img/Uranus.png" },
+            { planetName: "Neptune", gravity: 1.148, image: "img/Neptune.png" },
+        ];
+
+
+        for (let i = 0; i < planets.length; i++) {
+            const select = document.getElementById('select');
+            const option = document.createElement('option');
+            option.setAttribute('value', planets[i].gravity);
+            option.setAttribute('image', planets[i].image);
+            option.innerHTML = planets[i].planetName;
+            select.appendChild(option);
+        }
+
+        const input = document.getElementById('input').value;
+        const messageLine = "Let's Start For Calculating Our Weight On Planet";
+        const error = document.getElementById('error').style.display = 'none';
+        const form_bottom = document.getElementById('form_bottom').style.display = 'none';
+        const message = document.getElementById('message');
+        message.innerHTML = `<h2>${messageLine}</h2>`;
+
+
+        const calculateMass = document.getElementById('calculateMass');
+        calculateMass.addEventListener('click', fun);
+        function fun() {
+
+            const input = document.getElementById('input').value;
+            if (input == '') {
+
+                const errorMessage = "Please Enter Mass Value";
+                const big_box = document.getElementById('big_box').style.display = 'block';
+                document.getElementById('message').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('form_bottom').style.display = 'none';
+
+                const error = document.getElementById('error');
+                error.innerHTML = `<h2>${errorMessage}</h2>`;
+            }
+            else {
+
+                const form_bottom = document.getElementById('form_bottom').style.display = 'block';
+                const big_box = document.getElementById('big_box').style.display = 'none';
+                const select = document.getElementById('select').selectedIndex;
+                const option = document.getElementById('select').options;
+                const gravity = +(option[select].value);
+                const result = input * gravity;
+                const img = document.getElementById('img');
+                const selectOption = option[select];
+                const picture = selectOption.getAttribute('image');
+                img.src = picture;
+                const PlanetName = document.getElementById('PlanetName');
+                PlanetName.innerHTML = option[select].text;
+                const GravityValue = document.getElementById('GravityValue');
+                GravityValue.innerHTML = result.toFixed(2);
+            }
+            document.getElementById('input').value = '';
+        }
+
+    </script>
+
+</body>
+
+</html>

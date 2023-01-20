@@ -1,0 +1,422 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('star.gif');
+    background-size: cover;
+}
+.container {
+    width: 100%;
+    height: 936px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+video {
+    width: 100%;
+    height: 936px;
+    position: absolute;
+    object-fit: cover;
+}
+.heading {
+    z-index: 1;
+    padding-top: 50px;
+}
+.heading p {
+    font-size: 57px;
+    color: #fefefe;
+    text-shadow: 1px 2px 0px #5dc4ff;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 665px;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    margin-bottom: 89px;
+}
+.big_box {
+    width: 114%;
+    height: 560px;
+}
+.bigBox_backGroundColor {
+    width: 100%;
+    height: 162px;
+    background-color: rgba(100, 98, 98, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.message, .error {
+    width: 670px;
+    height: 70px;
+    background-color: rgba(65, 63, 63, 0.63);
+}
+.message h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+}
+.error h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+}
+.form_top {
+    display: flex;
+    flex-direction: row;
+    width: 637px;
+    height: 43px;
+    justify-content: space-between;
+    align-items: center;
+}
+.form input {
+    width: 281px;
+    height: 38px;
+    outline: none;
+    border: none;
+    padding-left: 8px;
+    font-size: 17px;
+}
+.form select {
+    width: 205px;
+    border-radius: 3px;
+    height: 38px;
+    padding: 0px 8px;
+    font-size: 17px;
+    outline: none;
+}
+.form button {
+    width: 123px;
+    height: 39px;
+    outline: none;
+    border: none;
+    background-color: rgb(178, 173, 173);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.form_bottom {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.result {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 560px;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 26px;
+    z-index: 1;
+    filter: blur(.3);
+}
+.result .left img {
+    width: 540px;
+}
+.result .right {
+    background-color: rgba(65, 63, 63, 0.63);
+    height: 181px;
+    width: 549px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.result .right p {
+    font-size: 25px;
+    color: rgb(245, 245, 245);
+    opacity: 1;
+}
+.result .right p span {
+    font-size: 29px;
+    font-weight: 700;
+}
+.result .right h2 {
+    width: 102px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: rgb(87 83 83 / 85%);
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+
+@media (max-width: 1777px) {
+    .result .left img {
+        width: 480px;
+    }
+    .result .right {
+        width: 479px;
+    }
+}
+@media (max-width: 1573px) {
+    .result .left img {
+        width: 445px;
+    }
+    .result .right {
+        width: 443px;
+        height: 196px;
+    }
+}
+@media (max-width: 1469px) {
+    .result .left img {
+        width: 400px;
+    }
+    .result .right {
+        width: 400px;
+    height: 196px;
+    text-align: center;
+    }
+}
+@media (max-width: 1333px) {
+    .result {    
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 631px;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 44px;
+        height: 665px;
+    }
+    .result .left img {
+        width: 400px;
+    }
+    .result .right {
+        width: 550px;
+        height: 196px;
+        text-align: center;
+    }
+}
+@media (max-width: 983px) {
+    .heading p {
+        font-size: 45px;
+    }
+    .form {
+        width: 85%;
+    }
+}
+@media (max-width: 791px) {
+    .heading p {
+        font-size: 37px;
+    }
+    .result .right {
+        width: 480px;
+        height: 196px;
+        text-align: center;
+    }
+}
+@media (max-width: 719px) {
+    .message, .error {
+        width: 620px;
+        height: 70px;
+    }
+    .message h2, .error h2 {
+        font-size: 25px;
+    }
+}
+@media (max-width: 675px) {
+    .form .form_top {
+        display: flex;
+        flex-direction: column;
+        width: 354px;
+        height: 163px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+    }
+    .big_box {
+        padding-top: 30px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1;
+        margin-bottom: 84px;
+    }
+    .form_top input, .form_top select, .form_top button {
+        width: 281px;
+        height: 38px;
+    }
+    .form button {
+        font-size: 20px;
+    }
+    .form_bottom {
+        width: 592px;
+    }
+    .result .left img {
+        width: 370px;
+    }
+    .result .right {
+        height: 181px;
+        width: 450px;
+    }
+    .message h2, .error h2 {
+        font-size: 21px;
+        text-align: center;
+    }
+}
+@media (max-width: 641px) {
+    .heading p {
+        font-size: 30px;
+    }
+    .message, .error {
+        width: 570px;
+        height: 70px;
+    }
+    .message h2, .error h2 {
+        font-size: 21px;
+    }
+    
+}
+@media (max-width: 623px) {
+    .form_bottom {
+        width: 485px;
+    }
+}
+@media (max-width: 503px) {
+    .form_bottom {
+        width: 440px;
+    }
+    .result .left img {
+        width: 390px;
+    }
+    .result .right {
+        width: 390px;
+        height: 182px;
+    }
+}
+@media (max-width: 523px) {
+    .heading p {
+        font-size: 25px;
+    }
+    .message, .error {
+        width: 520px;
+        height: 103px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .message h2, .error h2 {
+        font-size: 29px; 
+    }
+    .form {
+        margin-bottom: 123px;
+    }
+}
+@media (max-width: 455px) {
+    .form_bottom {
+        width: 334px;
+        height: 493px;
+    }
+    .result .left img {
+        width: 320px;
+    }
+    .result .right {
+        height: 181px;
+        width: 320px;
+    }
+    .result .right p {
+        font-size: 20px;
+    }
+}
+@media (max-width: 437px) {
+    .heading p {
+        font-size: 25px;
+        text-align: center;
+    }
+    .message, .error {
+        width: 570px;
+        height: 70px;
+    }
+    .message h2, .error h2 {
+        font-size: 21px;
+        text-align: center;
+    }
+}
+@media (max-width: 385px) {
+    .form .form_top {
+        width: 300px;
+        height: 163px;
+    }
+}
+@media (max-width: 339px) {
+    .heading p {
+        font-size: 21px;
+    }
+    .form .form_top {
+        width: 250px;
+        height: 140px;
+    }
+    .form_top input, .form_top select, .form_top button {
+        width: 250px;
+        height: 35px;
+    }
+    .result {
+        height: 506px;
+    }
+    .form_bottom {
+        width: 280px;
+        height: 528px;
+    }
+    .result .left img {
+        width: 280px;
+    }
+    .result .right {
+        height: 160px;
+        width: 250px;
+    }
+    .result .right p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 301px) {
+    .result {
+        height: 506px;
+    }
+    .form_bottom {
+        width: 280px;
+        height: 645px;
+    }
+    .form .form_top {
+        width: 265px;
+        height: 163px;
+    }
+    .form input, .form select, .form button {
+        width: 260px;
+        height: 35px;
+    }
+    .form button {
+        font-size: 17px;
+    }
+}
+
